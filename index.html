@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiss Day - Sweet Kisses for My Chitti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2d0b3b 0%, #4a1e5a 30%, #6b2b7a 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .kiss-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 105, 180, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 90% 80%, rgba(255, 105, 180, 0.1) 2px, transparent 2px);
+            background-size: 100px 100px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .sparkle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
+        }
+        
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #ff69b4;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #ffb6c1;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .kiss-icon {
+            color: #ff1493;
+            animation: kissFloat 3s infinite;
+            display: inline-block;
+            font-size: 2.5rem;
+            margin: 0 10px;
+        }
+        
+        @keyframes kissFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 182, 193, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            text-align: left;
+            padding: 0 20px;
+            color: #ffd1dc;
+        }
+        
+        .highlight {
+            color: #ff69b4;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #ff69b4;
+            text-align: right;
+            margin-top: 30px;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+        }
+        
+        .kiss-types-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .kiss-types-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #ff69b4;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+        
+        .kiss-types-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            padding: 25px;
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .kiss-type-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .kiss-type-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff69b4, #ff1493);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .kiss-type-card:hover::before {
+            opacity: 1;
+        }
+        
+        .kiss-type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: #ff69b4;
+            background: rgba(255, 105, 180, 0.15);
+        }
+        
+        .kiss-type-card.selected {
+            transform: scale(0.98);
+            background: rgba(255, 105, 180, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .kiss-type-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .kiss-type-name {
+            font-size: 1.5rem;
+            color: #ff69b4;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .kiss-type-desc {
+            font-size: 1rem;
+            color: #ffd1dc;
+            line-height: 1.4;
+        }
+        
+        .kiss-detail {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(255, 182, 193, 0.15);
+            border-radius: 20px;
+            color: #ffd1dc;
+            font-size: 1.4rem;
+            line-height: 1.7;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .virtual-kiss-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ff69b4;
+        }
+        
+        .kiss-btn {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            padding: 22px 50px;
+            font-size: 1.6rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+        }
+        
+        .kiss-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .kiss-btn:hover::before {
+            left: 100%;
+        }
+        
+        .kiss-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.7);
+        }
+        
+        .kiss-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .virtual-kiss-content {
+            display: none;
+            margin-top: 40px;
+            padding: 40px;
+            background: rgba(255, 182, 193, 0.15);
+            border-radius: 20px;
+            color: #ffd1dc;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease;
+            border: 3px solid #ffb6c1;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .virtual-kiss-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #ff69b4;
+            margin-bottom: 30px;
+        }
+        
+        .kiss-animation {
+            font-size: 8rem;
+            margin: 30px 0;
+            animation: kissAnimation 4s infinite ease-in-out;
+            filter: drop-shadow(0 5px 15px rgba(255, 105, 180, 0.5));
+            position: relative;
+        }
+        
+        @keyframes kissAnimation {
+            0% { transform: scale(1) rotate(0deg); }
+            20% { transform: scale(1.2) rotate(-5deg); }
+            40% { transform: scale(1.3); }
+            60% { transform: scale(1.2) rotate(5deg); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        
+        .real-kiss-promise {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 3px solid #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .kiss-cloud {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .kiss-cloud-item {
+            font-size: 2.5rem;
+            animation: floatKiss 4s infinite;
+        }
+        
+        @keyframes floatKiss {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(-10deg); }
+            75% { transform: translateY(-10px) rotate(10deg); }
+        }
+        
+        .lip-print {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #ff1493;
+            border-radius: 50%;
+            opacity: 0.7;
+            filter: blur(2px);
+            display: none;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            font-size: 1.1rem;
+            color: #ffb6c1;
+            opacity: 0.9;
+            border-top: 2px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .floating-kisses {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .kiss-types-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+            
+            .kiss-types-title {
+                font-size: 2.8rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                padding: 0 10px;
+            }
+            
+            .kiss-types-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .kiss-type-card {
+                padding: 25px 15px;
+                min-height: 180px;
+            }
+            
+            .kiss-animation {
+                font-size: 6rem;
+            }
+            
+            .virtual-kiss-title {
+                font-size: 2.8rem;
+            }
+            
+            .kiss-btn {
+                font-size: 1.8rem;
+                padding: 20px 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .kiss-type-card {
+                min-height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="kiss-bg"></div>
+    <div class="sparkle-bg"></div>
+    
+    <!-- Floating kisses -->
+    <div class="floating-kisses" id="floatingKisses"></div>
+    
+    <!-- Lip prints container -->
+    <div id="lipPrintsContainer"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Happy Kiss Day, Chitti! <span class="kiss-icon">💋</span></h1>
+            <p class="subtitle">A day to celebrate the sweetest expressions of love</p>
+            <p class="subtitle">Sending you kisses that carry all my love</p>
+        </header>
+        
+        <div class="message-box">
+            <p class="message">
+                My Darling <span class="highlight">Chitti</span>,<br><br>
+                On this special Kiss Day, I want to shower you with all the kisses my heart holds for you. Each kiss is a whisper of love, a promise of affection, and a memory of our sweetest moments together.
+                <br><br>
+                A kiss from you is like magic - it makes everything better, brighter, and more beautiful. It's a language that needs no words, a connection that transcends distance, and a feeling that stays with me long after our lips part.
+                <br><br>
+                Today, I want to send you kisses that carry all the love in my heart. Kisses for your smile, your laughter, your kindness, and for simply being you - the most wonderful person in my world.
+            </p>
+            <div class="signature">Forever yours</div>
+        </div>
+        
+        <div class="kiss-types-section">
+            <h2 class="kiss-types-title">Special Kisses Just For You</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px; color: #ffb6c1;">
+                Click on each kiss type to receive it virtually!
+            </p>
+            
+            <div class="kiss-types-container" id="kissTypesContainer">
+                <!-- Kiss type cards will be added by JavaScript -->
+            </div>
+            
+            <div class="kiss-detail" id="kissDetail">
+                <!-- Kiss detail will appear here when card is clicked -->
+            </div>
+        </div>
+        
+        <div class="virtual-kiss-section">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #ff69b4;">
+                Your Special Virtual Kiss 
+                <i class="fas fa-heart" style="color: #ff1493;"></i>
+            </h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px; color: #ffb6c1;">
+                Ready for the sweetest virtual kiss ever?
+            </p>
+            
+            <button class="kiss-btn" id="kissBtn">
+                <i class="fas fa-kiss-wink-heart"></i> Send Me A Virtual Kiss <i class="fas fa-kiss-wink-heart"></i>
+            </button>
+            
+            <div class="virtual-kiss-content" id="virtualKissContent">
+                <h3 class="virtual-kiss-title">A Sweet Virtual Kiss for My Chitti</h3>
+                <div class="kiss-animation">💋</div>
+                
+                <div style="font-size: 1.6rem; line-height: 1.7; margin: 30px 0; color: #ffd1dc;">
+                    My beautiful Chitti,<br>
+                    Consider yourself kissed! A sweet, tender kiss that carries all my love and affection. 
+                    This virtual kiss is as real as my feelings for you.
+                </div>
+                
+                <div class="real-kiss-promise">
+                    <h3 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">
+                        <i class="fas fa-gift"></i> My Real Kiss Promise <i class="fas fa-gift"></i>
+                    </h3>
+                    <p style="font-size: 1.4rem; line-height: 1.6;">
+                        <strong>The next time we meet, you'll get the sweetest, most loving real kiss!</strong> 
+                        But until then, I promise that every thought of you brings a smile to my face, 
+                        and every memory of our kisses warms my heart. You are always on my mind and in my heart.
+                    </p>
+                    <p style="font-size: 1.4rem; margin-top: 20px;">
+                        Your kisses are my favorite sweet treat!
+                    </p>
+                </div>
+                
+                <div class="kiss-cloud">
+                    <div class="kiss-cloud-item">💋</div>
+                    <div class="kiss-cloud-item">😘</div>
+                    <div class="kiss-cloud-item">💖</div>
+                    <div class="kiss-cloud-item">💋</div>
+                    <div class="kiss-cloud-item">😘</div>
+                    <div class="kiss-cloud-item">💖</div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 25px; background: rgba(255, 105, 180, 0.2); border-radius: 15px; border: 2px solid #ff69b4;">
+                    <p style="font-size: 1.5rem; color: #ffd700;">
+                        <i class="fas fa-star" style="color: #ff1493;"></i> 
+                        <strong>Your kisses are magical, Chitti!</strong> 
+                        <i class="fas fa-star" style="color: #ff1493;"></i>
+                    </p>
+                    <p style="font-size: 1.3rem; margin-top: 15px; color: #ffd1dc;">
+                        May we always share kisses that speak the language of our hearts.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Made with sweet kisses and endless love for Chitti - my favorite person to kiss</p>
+            <p>Kiss Day 2026 | Your kisses make my world complete</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const kissTypesContainer = document.getElementById('kissTypesContainer');
+            const kissDetail = document.getElementById('kissDetail');
+            const kissBtn = document.getElementById('kissBtn');
+            const virtualKissContent = document.getElementById('virtualKissContent');
+            const floatingKisses = document.getElementById('floatingKisses');
+            const lipPrintsContainer = document.getElementById('lipPrintsContainer');
+            
+            // Kiss types data
+            const kissTypes = [
+                {
+                    icon: "💋",
+                    name: "Sweet Kiss",
+                    desc: "A tender, loving kiss",
+                    detail: "This kiss is soft, gentle, and filled with pure love. It's the kind of kiss that says 'I love you' without any words. It's sweet, tender, and leaves you feeling cherished and adored."
+                },
+                {
+                    icon: "😘",
+                    name: "Flying Kiss",
+                    desc: "Sent across any distance",
+                    detail: "This kiss travels through the air,跨越任何距离找到你. It's playful, affectionate, and carries my love straight to you no matter where you are. Catch it and feel my love reaching out to you."
+                },
+                {
+                    icon: "💖",
+                    name: "Forehead Kiss",
+                    desc: "Protective and caring",
+                    detail: "A gentle kiss on your forehead that says 'I'll protect you,' 'I cherish you,' and 'You're safe with me.' It's a kiss of deep care, respect, and unwavering affection."
+                },
+                {
+                    icon: "🌟",
+                    name: "Starry Kiss",
+                    desc: "As magical as the night sky",
+                    detail: "This kiss sparkles with magic and wonder, like starlight on your lips. It's romantic, dreamy, and makes you feel like you're the only two people in the universe. Pure magic in a kiss."
+                },
+                {
+                    icon: "☀️",
+                    name: "Good Morning Kiss",
+                    desc: "To start your day right",
+                    detail: "A soft, sweet kiss that greets you in the morning and wishes you a beautiful day ahead. It's fresh, loving, and filled with hope for the wonderful day we'll share together."
+                },
+                {
+                    icon: "🌙",
+                    name: "Goodnight Kiss",
+                    desc: "Sweet dreams guaranteed",
+                    detail: "A gentle, lingering kiss that wishes you peaceful sleep and sweet dreams. It's the perfect way to end the day, filled with warmth, comfort, and the promise of tomorrow together."
+                },
+                {
+                    icon: "🎉",
+                    name: "Celebration Kiss",
+                    desc: "For your happy moments",
+                    detail: "An enthusiastic, joyful kiss that celebrates your happiness and achievements. It might be a quick peck or a longer, happier kiss that says 'I'm so proud of you!' and 'Let's celebrate!'"
+                },
+                {
+                    icon: "🤫",
+                    name: "Secret Kiss",
+                    desc: "Our little secret",
+                    detail: "A quick, stolen kiss that feels exciting and intimate. It's our little secret, a moment of connection that's just between us. Playful, loving, and wonderfully special."
+                },
+                {
+                    icon: "🫂",
+                    name: "Comfort Kiss",
+                    desc: "When you need reassurance",
+                    detail: "A soft, understanding kiss that comforts you when you're feeling down. It says 'I'm here for you,' 'Everything will be okay,' and 'You're not alone.' Healing and loving."
+                }
+            ];
+            
+            // Create kiss type cards
+            kissTypes.forEach((kissType, index) => {
+                const kissCard = document.createElement('div');
+                kissCard.className = 'kiss-type-card';
+                kissCard.innerHTML = `
+                    <div class="kiss-type-icon">${kissType.icon}</div>
+                    <div class="kiss-type-name">${kissType.name}</div>
+                    <div class="kiss-type-desc">${kissType.desc}</div>
+                `;
+                kissCard.dataset.detail = kissType.detail;
+                kissCard.dataset.index = index;
+                
+                // Add click event
+                kissCard.addEventListener('click', function() {
+                    // Reset all kiss cards
+                    document.querySelectorAll('.kiss-type-card').forEach(card => {
+                        card.classList.remove('selected');
+                    });
+                    
+                    // Mark this card as selected
+                    this.classList.add('selected');
+                    
+                    // Show detail
+                    kissDetail.innerHTML = `
+                        <h3 style="color: #ff69b4; margin-bottom: 20px; font-family: 'Great Vibes', cursive; font-size: 2.5rem;">
+                            ${kissTypes[index].name}
+                        </h3>
+                        <p>${kissTypes[index].detail}</p>
+                        <div style="margin-top: 25px; font-size: 2.5rem; color: #ff1493;">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    `;
+                    kissDetail.style.display = 'block';
+                    
+                    // Create kiss particles
+                    createKissParticles(this);
+                    
+                    // Create lip print
+                    createLipPrint();
+                    
+                    // Scroll to detail
+                    kissDetail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+                
+                kissTypesContainer.appendChild(kissCard);
+            });
+            
+            // Create floating kisses
+            function createFloatingKisses() {
+                const kisses = ['💋', '😘', '💖', '❤️', '💕', '✨'];
+                
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const kiss = document.createElement('div');
+                        kiss.innerHTML = kisses[Math.floor(Math.random() * kisses.length)];
+                        kiss.style.position = 'fixed';
+                        kiss.style.color = ['#ff69b4', '#ff1493', '#ffb6c1'][Math.floor(Math.random() * 3)];
+                        kiss.style.fontSize = Math.random() * 30 + 20 + 'px';
+                        kiss.style.left = Math.random() * 100 + 'vw';
+                        kiss.style.top = '100vh';
+                        kiss.style.zIndex = '0';
+                        kiss.style.pointerEvents = 'none';
+                        kiss.style.opacity = '0.6';
+                        floatingKisses.appendChild(kiss);
+                        
+                        // Animate kiss
+                        const animation = kiss.animate([
+                            { transform: 'translateY(0) rotate(0deg)', opacity: 0.6 },
+                            { transform: `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                        ], {
+                            duration: Math.random() * 8000 + 7000,
+                            easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                        });
+                        
+                        // Remove kiss after animation
+                        animation.onfinish = () => {
+                            kiss.remove();
+                        };
+                    }, i * 600);
+                }
+            }
+            
+            // Start creating floating kisses
+            createFloatingKisses();
+            setInterval(createFloatingKisses, 13000);
+            
+            // Create kiss particles
+            function createKissParticles(element) {
+                const rect = element.getBoundingClientRect();
+                const symbols = ['💋', '😘', '💖', '❤️', '💕'];
+                
+                for (let i = 0; i < 8; i++) {
+                    setTimeout(() => {
+                        const particle = document.createElement('div');
+                        particle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                        particle.style.position = 'fixed';
+                        particle.style.color = ['#ff69b4', '#ff1493'][Math.floor(Math.random() * 2)];
+                        particle.style.fontSize = Math.random() * 25 + 20 + 'px';
+                        particle.style.left = (rect.left + rect.width/2) + 'px';
+                        particle.style.top = (rect.top + rect.height/2) + 'px';
+                        particle.style.zIndex = '9999';
+                        particle.style.pointerEvents = 'none';
+                        particle.style.opacity = '0';
+                        document.body.appendChild(particle);
+                        
+                        // Animate particle
+                        const angle = Math.random() * Math.PI * 2;
+                        const distance = Math.random() * 100 + 50;
+                        const targetX = Math.cos(angle) * distance;
+                        const targetY = Math.sin(angle) * distance;
+                        
+                        const fadeIn = particle.animate([
+                            { 
+                                opacity: 0, 
+                                transform: 'translate(0, 0) scale(0.5)' 
+                            },
+                            { 
+                                opacity: 1, 
+                                transform: `translate(${targetX}px, ${targetY}px) scale(1.2)` 
+                            },
+                            { 
+                                opacity: 0, 
+                                transform: `translate(${targetX * 1.5}px, ${targetY * 1.5}px) scale(0.5)` 
+                            }
+                        ], {
+                            duration: Math.random() * 1500 + 1000,
+                            easing: 'ease-out'
+                        });
+                        
+                        // Remove particle after animation
+                        fadeIn.onfinish = () => {
+                            particle.remove();
+                        };
+                    }, i * 100);
+                }
+            }
+            
+            // Create lip print
+            function createLipPrint() {
+                const lipPrint = document.createElement('div');
+                lipPrint.className = 'lip-print';
+                lipPrint.style.left = Math.random() * 80 + 10 + 'vw';
+                lipPrint.style.top = Math.random() * 80 + 10 + 'vh';
+                lipPrint.style.display = 'block';
+                lipPrint.style.zIndex = '9997';
+                
+                document.body.appendChild(lipPrint);
+                
+                // Animate lip print
+                const animation = lipPrint.animate([
+                    { opacity: 0.7, transform: 'scale(0.5)' },
+                    { opacity: 0.9, transform: 'scale(1)' },
+                    { opacity: 0, transform: 'scale(1.2)' }
+                ], {
+                    duration: 2000,
+                    easing: 'ease-out'
+                });
+                
+                // Remove lip print after animation
+                animation.onfinish = () => {
+                    lipPrint.remove();
+                };
+            }
+            
+            // Reveal virtual kiss content when button is clicked
+            kissBtn.addEventListener('click', function() {
+                virtualKissContent.style.display = 'block';
+                kissBtn.style.display = 'none';
+                
+                // Create kiss shower
+                createKissShower();
+                
+                // Create multiple lip prints
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createLipPrint();
+                    }, i * 300);
+                }
+                
+                // Scroll to virtual kiss content
+                virtualKissContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            
+            // Create kiss shower
+            function createKissShower() {
+                const kisses = ['💋', '😘', '💖', '❤️', '💕', '✨'];
+                
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const kiss = document.createElement('div');
+                        kiss.innerHTML = kisses[Math.floor(Math.random() * kisses.length)];
+                        kiss.style.position = 'fixed';
+                        kiss.style.color = ['#ff69b4', '#ff1493', '#ffb6c1'][Math.floor(Math.random() * 3)];
+                        kiss.style.fontSize = Math.random() * 40 + 30 + 'px';
+                        kiss.style.left = Math.random() * 100 + 'vw';
+                        kiss.style.top = '-50px';
+                        kiss.style.zIndex = '9998';
+                        kiss.style.pointerEvents = 'none';
+                        document.body.appendChild(kiss);
+                        
+                        // Animate kiss falling
+                        const fall = kiss.animate([
+                            { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                            { transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                        ], {
+                            duration: Math.random() * 6000 + 5000,
+                            easing: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)'
+                        });
+                        
+                        // Remove kiss after animation
+                        fall.onfinish = () => {
+                            kiss.remove();
+                        };
+                    }, i * 150);
+                }
+            }
+            
+            // Make the kiss animation interactive
+            const kissAnimation = document.querySelector('.kiss-animation');
+            if (kissAnimation) {
+                kissAnimation.addEventListener('click', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'kissAnimation 4s infinite ease-in-out';
+                    }, 10);
+                    
+                    // Create lip print at click location
+                    createLipPrint();
+                });
+            }
+            
+            // Auto-select first kiss after a delay
+            setTimeout(() => {
+                const firstKiss = document.querySelector('.kiss-type-card');
+                if (firstKiss) {
+                    firstKiss.click();
+                }
+            }, 2000);
+            
+            // Add a pulsing animation to the kiss button
+            setInterval(() => {
+                if (kissBtn.style.display !== 'none') {
+                    kissBtn.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        kissBtn.style.transform = 'scale(1)';
+                    }, 500);
+                }
+            }, 3000);
+            
+            // Add click effect to the page (creates lip prints when clicked)
+            document.addEventListener('click', function(e) {
+                // Don't create lip prints when clicking interactive elements
+                if (!e.target.closest('.kiss-type-card') && 
+                    !e.target.closest('#kissBtn') && 
+                    !e.target.closest('.kiss-animation')) {
+                    
+                    const clickLipPrint = document.createElement('div');
+                    clickLipPrint.className = 'lip-print';
+                    clickLipPrint.style.left = e.clientX + 'px';
+                    clickLipPrint.style.top = e.clientY + 'px';
+                    clickLipPrint.style.display = 'block';
+                    clickLipPrint.style.zIndex = '9997';
+                    clickLipPrint.style.width = '40px';
+                    clickLipPrint.style.height = '40px';
+                    
+                    document.body.appendChild(clickLipPrint);
+                    
+                    // Animate lip print
+                    const animation = clickLipPrint.animate([
+                        { opacity: 0.5, transform: 'scale(0.3)' },
+                        { opacity: 0.7, transform: 'scale(0.8)' },
+                        { opacity: 0, transform: 'scale(1)' }
+                    ], {
+                        duration: 1500,
+                        easing: 'ease-out'
+                    });
+                    
+                    // Remove lip print after animation
+                    animation.onfinish = () => {
+                        clickLipPrint.remove();
+                    };
+                }
+            });
+        });
+    </script>
+</body>
+</html>
